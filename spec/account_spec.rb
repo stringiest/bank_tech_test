@@ -21,4 +21,10 @@ describe Account do
       expect(subject.transactions).to eq [{:date=>'10/01/2012', :credit=>100000, :debit=>0, :running_balance=>100000}]
     end
   end
+
+  context 'withdrawing money' do
+    it 'responds to the method withdraw' do
+      expect(subject).to respond_to(:withdraw).with(2).arguments
+    end
+  end
 end

@@ -15,4 +15,7 @@ class Account
       :debit => 0,
       :running_balance => @balance}
   end
+
+  def withdraw(date, amount)
+  end
 end
