@@ -23,7 +23,7 @@ describe Account do
       expect(subject.transactions).to eq [{
         date: '10/01/2012',
         credit: 100_000,
-        debit: "",
+        debit: 0,
         running_balance: 100_000
       }]
     end
@@ -45,11 +45,11 @@ describe Account do
       expect(subject.transactions).to eq [{
         date: '10/01/2012',
         credit: 100_000,
-        debit: "",
+        debit: 0,
         running_balance: 100_000
       }, {
         date: '11/01/2012',
-        credit: "",
+        credit: 0,
         debit: 50_000,
         running_balance: 50_000
       }]
