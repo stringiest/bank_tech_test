@@ -15,7 +15,7 @@ class Account
     @transactions << {
       date: Date.parse(date).strftime('%d/%m/%Y'),
       credit: deposited_amount,
-      debit: 0,
+      debit: "",
       running_balance: @balance
     }
   end
@@ -25,7 +25,7 @@ class Account
     @balance -= withdrawn_amount
     @transactions << {
       date: Date.parse(date).strftime('%d/%m/%Y'),
-      credit: 0,
+      credit: "",
       debit: withdrawn_amount,
       running_balance: @balance
     }
