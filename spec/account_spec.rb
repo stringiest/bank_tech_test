@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe Account do
@@ -18,13 +20,39 @@ describe Account do
 
     it 'updates transactions array with deposit details' do
       subject.deposit('10-01-2012', '1000')
-      expect(subject.transactions).to eq [{:date=>'10/01/2012', :credit=>100000, :debit=>0, :running_balance=>100000}]
+      expect(subject.transactions).to eq [{
+        date: '10/01/2012',
+        credit: 100_000,
+        debit: 0,
+        running_balance: 100_000
+      }]
     end
   end
 
   context 'withdrawing money' do
     it 'responds to the method withdraw' do
       expect(subject).to respond_to(:withdraw).with(2).arguments
+    end
+
+    it 'decreases the current balance' do
+      subject.deposit('10-01-2012', '1000')
+      expect { subject.withdraw('11-01-2012', '500') }.to change { subject.balance }.by(-50_000)
+    end
+
+    it 'updates transactions array with deposit details' do
+      subject.deposit('10-01-2012', '1000')
+      subject.withdraw('11-01-2012', '500')
+      expect(subject.transactions).to eq [{
+        date: '10/01/2012',
+        credit: 100_000,
+        debit: 0,
+        running_balance: 100_000
+      }, {
+        date: '11/01/2012',
+        credit: 0,
+        debit: 50_000,
+        running_balance: 50_000
+      }]
     end
   end
 end

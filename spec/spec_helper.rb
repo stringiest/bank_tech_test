@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
@@ -108,9 +110,9 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-config.after(:suite) do
-  puts
-  puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
-  puts "\e[33mTry it now! Just run: rubocop\e[0m"
-end
+  config.after(:suite) do
+    puts
+    puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
+    puts "\e[33mTry it now! Just run: rubocop\e[0m"
+  end
 end
