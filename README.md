@@ -7,6 +7,7 @@ This project is written in Ruby, linted using Rubocop and tested using Rspec.  T
 
 ## Planning
 ### Diagrams
+![Class diagram](/images/Class_diagram.png)
 
 ### User Stories
 ```
