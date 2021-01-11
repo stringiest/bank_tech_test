@@ -36,6 +36,7 @@ I don't want to be able to withdraw more than my current balance
 * assume methods for deposit, withdraw and print statement
 * is print a separate class?
 * store individual transactions in an array of hashes, with each transaction hash having date, credit, debit and balance as key/value pairs
+* initial pass at coding this has 'transactions' as an `attr_reader`.  On reflection, that is probably not a good idea - think about how else to access this.
 
 ## Specification
 
