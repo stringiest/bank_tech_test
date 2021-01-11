@@ -5,6 +5,37 @@ This is the first of the week 10 tech tests at Makers Academy
 ## Technical Information
 This project is written in Ruby, linted using Rubocop and tested using Rspec.  Test coverage is provided by SimpleCov.
 
+## Planning
+### Diagrams
+
+### User Stories
+```
+As a user
+So that I can check for fraudulent transactions
+I want to be able to print an account statement
+```
+```
+As a user
+So that I can store my money safely
+I want to be able to make a deposit
+```
+```
+As a user
+So that I can spend my money
+I want to be able to make a withdrawal
+```
+```
+As a user
+So that I don't incur overdraft fees
+I don't want to be able to withdraw more than my current balance
+```
+
+### Notes
+* store current balance as a variable
+* assume methods for deposit, withdraw and print statement
+* is print a separate class?
+* store individual transactions in an array of hashes, with each transaction hash having date, credit, debit and balance as key/value pairs
+
 ## Specification
 
 ### Requirements
