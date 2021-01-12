@@ -20,7 +20,7 @@ class Print
     array = []
     account.transactions.each do |transaction|
       format_array(transaction)
-      array << transaction.join(' || ').split.join(' ')
+      array.unshift(transaction.join(' || ').split.join(' '))
     end
     array
   end

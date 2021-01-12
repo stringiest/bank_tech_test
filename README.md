@@ -1,9 +1,22 @@
 # Bank Tech Test
 
-This is the first of the week 10 tech tests at Makers Academy
+This is the first of the week 10 tech tests at Makers Academy.
+
+My initial planning involved translating the specification into user stories, using a class diagram to plan out the classes required, and making some additional written notes.
+
+My initial set-up worked well for the Account class, but when I came to try to print out the statement I found that I was doing additional translation to retrieve the transaction data from the hashes.  I therefore changed to storing the transactions in an array of arrays.
+
+To allow for the rounding errors implicit in the integer class, I stored amounts in pence rather than pounds.  I then translated to pounds for the statement view.  Storing the amounts as integers rather than strings would allow for bank interest to be calculated easily on the balances, if such an extension was required.
+
+Though it was not stipulated in the specification, with further time I would update the withdrawal method to ensure that withdrawal was only possible if sufficient funds were in the account.
+
+A further extension would be for each account to be generated with an account number, so that a specific account could be accessed.
 
 ## Technical Information
 This project is written in Ruby, linted using Rubocop and tested using Rspec.  Test coverage is provided by SimpleCov.
+
+## Test Coverage
+![Test coverage](/images/Test_coverage.png)
 
 ## Planning
 ### Diagrams
@@ -25,18 +38,12 @@ As a user
 So that I can spend my money
 I want to be able to make a withdrawal
 ```
-```
-As a user
-So that I don't incur overdraft fees
-I don't want to be able to withdraw more than my current balance
-```
 
-### Notes
+### Planning Notes
 * store current balance as a variable
 * assume methods for deposit, withdraw and print statement
-* is print a separate class?
-* store individual transactions in an array of hashes, with each transaction hash having date, credit, debit and balance as key/value pairs
-* initial pass at coding this has 'transactions' as an `attr_reader`.  On reflection, that is probably not a good idea - think about how else to access this.
+* need a separate class for Print
+* store transactions in an array of hashes, with each transaction hash having date, credit, debit and balance as key/value pairs.
 
 ## Specification
 
