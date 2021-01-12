@@ -20,12 +20,12 @@ describe Account do
 
     it 'updates transactions array with deposit details' do
       subject.deposit('10-01-2012', '1000')
-      expect(subject.transactions).to eq [{
-        date: '10/01/2012',
-        credit: 100_000,
-        debit: 0,
-        running_balance: 100_000
-      }]
+      expect(subject.transactions).to eq [[
+        '10/01/2012',
+        100_000,
+        0,
+        100_000
+      ]]
     end
   end
 
@@ -42,17 +42,17 @@ describe Account do
     it 'updates transactions array with withdrawal details' do
       subject.deposit('10-01-2012', '1000')
       subject.withdraw('11-01-2012', '500')
-      expect(subject.transactions).to eq [{
-        date: '10/01/2012',
-        credit: 100_000,
-        debit: 0,
-        running_balance: 100_000
-      }, {
-        date: '11/01/2012',
-        credit: 0,
-        debit: 50_000,
-        running_balance: 50_000
-      }]
+      expect(subject.transactions).to eq [[
+        '10/01/2012',
+        100_000,
+        0,
+        100_000
+      ], [
+        '11/01/2012',
+        0,
+        50_000,
+        50_000
+      ]]
     end
   end
 end

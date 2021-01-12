@@ -5,19 +5,22 @@ class Print
     @columns = ['date', 'credit', 'debit', 'balance']
   end
 
+  def print_statement(account)
+    statement = format_lines(account)
+    statement.unshift(write_header)
+    statement.each { |entry| puts entry }
+  end
+
   def write_header
     @columns.join(' || ')
   end
 
-  def write_line(account)
+  def format_lines(account)
     array = []
-    account.transactions.each do |transaction|
-      transaction.each do |k, v|
-        array << v
-      end
+    account.transactions.map do |transaction|
+      format_array(transaction)
+      array << transaction.join(' || ').split.join(' ')
     end
-    format_array(array)
-    array.join(' || ').split.join(' ')
   end
 
   private
