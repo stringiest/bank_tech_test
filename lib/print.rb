@@ -8,10 +8,8 @@ class Print
   def print_statement(account)
     statement = format_lines(account)
     statement.unshift(write_header)
-    p 'printing statement'
-    p statement
-    statement.each { |entry| puts entry }
-    # instead of puts need method that returns each line of statementon new line
+    puts statement.join("\n")
+    statement.join("\n")
   end
 
   def write_header

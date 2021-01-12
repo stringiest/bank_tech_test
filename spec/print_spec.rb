@@ -24,7 +24,7 @@ describe Print do
       account = Account.new
       account.deposit('10-01-2012', '1000')
       account.withdraw('11-01-2012', '500')
-      expect(subject.print_statement(account)).to eq('date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00\n11/01/2012 || || 500.00 || 500.00')
+      expect(subject.print_statement(account)).to eq("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00\n11/01/2012 || || 500.00 || 500.00")
     end
   end
 end
