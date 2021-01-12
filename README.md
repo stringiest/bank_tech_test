@@ -18,6 +18,39 @@ This project is written in Ruby, linted using Rubocop and tested using Rspec.  T
 ## Test Coverage
 ![Test coverage](/images/Test_coverage.png)
 
+## How To Use the Program
+
+### Cloning the repo & installing the necessary gems
+```sh
+$ git clone git@github.com:stringiest/bank_tech_test.git
+$ cd bank_tech_test
+$ bundle
+```
+
+### Using the program
+To create a new account:
+```ruby
+account = Account.new
+```
+
+To deposit money:
+E.g. £1,000 on 12/01/2021
+```ruby
+account.deposit('12-01-2021', '1000')
+```
+
+To withdraw money:
+E.g. £500 on 13/01/2021
+```ruby
+account.withdraw('13-01-2021', '500')
+```
+
+To get a statement:
+```ruby
+statement = Print.new
+statement.print_statement
+```
+
 ## Planning
 ### Diagrams
 ![Class diagram](/images/Class_diagram.png)
