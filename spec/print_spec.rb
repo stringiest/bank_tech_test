@@ -17,7 +17,7 @@ describe Print do
     it 'should format the transactions' do
       account = Account.new
       account.deposit('10-01-2012', '1000')
-      expect(subject.format_lines(account)).to eq([['10/01/2012 || 1000.00 || || 1000.00']])
+      expect(subject.format_lines(account)).to eq(['10/01/2012 || 1000.00 || || 1000.00'])
     end
 
     it 'should print a statement' do

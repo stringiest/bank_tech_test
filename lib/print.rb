@@ -8,7 +8,10 @@ class Print
   def print_statement(account)
     statement = format_lines(account)
     statement.unshift(write_header)
+    p 'printing statement'
+    p statement
     statement.each { |entry| puts entry }
+    # instead of puts need method that returns each line of statementon new line
   end
 
   def write_header
@@ -17,10 +20,11 @@ class Print
 
   def format_lines(account)
     array = []
-    account.transactions.map do |transaction|
+    account.transactions.each do |transaction|
       format_array(transaction)
       array << transaction.join(' || ').split.join(' ')
     end
+    array
   end
 
   private
